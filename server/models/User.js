@@ -7,16 +7,7 @@ const userSchema = new mongoose.Schema({
   passwordHash: { type: String, required: true },
   role: { type: String, enum: ['client', 'worker', 'admin'], default: 'client' },
   adminRoleTitle: { type: String, default: '' },
-  adminPermissions: {
-    dashboard: { type: Boolean, default: false },
-    users: { type: Boolean, default: false },
-    categories: { type: Boolean, default: false },
-    vendors: { type: Boolean, default: false },
-    addVendor: { type: Boolean, default: false },
-    orders: { type: Boolean, default: false },
-    settings: { type: Boolean, default: false },
-    tickets: { type: Boolean, default: false },
-  },
+  adminPermissions: { dashboard: { type: Boolean, default: false }, users: { type: Boolean, default: false }, categories: { type: Boolean, default: false }, vendors: { type: Boolean, default: false }, addVendor: { type: Boolean, default: false }, orders: { type: Boolean, default: false }, settings: { type: Boolean, default: false }, tickets: { type: Boolean, default: false } },
   accessStart: { type: Date, default: Date.now },
   accessEnd: { type: Date },
   skills: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Skill' }],
@@ -24,6 +15,6 @@ const userSchema = new mongoose.Schema({
   rating: { type: Number, default: 5 },
   isOnline: { type: Boolean, default: false },
   isSuspended: { type: Boolean, default: false },
-  createdAt: { type: Date, default: Date.now },
+  createdAt: { type: Date, default: Date.now }
 });
 export default mongoose.model('User', userSchema);
