@@ -1,4 +1,3 @@
-cd /c/Users/Zinodeini/qeshm-app && cat > package.json << 'PKG'
 {
   "name": "qeshm-server",
   "version": "1.0.0",
